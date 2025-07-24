@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">meFood</string>
-
+    
+    <string name="gaeng_som_meal_name">Spicy Salmon Gaeng Som</string>
+    <string name="gaeng_som_meal_desc">This. A construct of flavor, drawn from the oceans of the Old World. We cultivate the flesh of Salmo salar, tender and yielding. It rests within a vibrant, flowing golden-spectrum broth, a testament to their rudimentary spice combinations. That sharp, bright tang? The distinct mark of fermented Tamarindus indica. A simple, yet potent, warmth.</string>
+    <string name="vege_fiesta_meal_name">Vege Fiesta Bowl</string>
+    <string name="vege_fiesta_meal_desc">We take the sweet kernels of Zea mays, extracted from those ancient fields, and blend them with the rich, soft flesh of Persea americana. All cradled within a pliable covering, precisely replicated from their methods. A core of fermented spice provides the sharp, desired impact.</string>
+    <string name="origin_thai">Thai Cuisine</string>
+    <string name="origin_mexico">Mexican Cuisine</string>
 </resources>
