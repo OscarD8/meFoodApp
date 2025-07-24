@@ -26,10 +26,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             AppTheme {
                 Surface (
+                    color = MaterialTheme.colorScheme.background,
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
                 ) {
-                    MeFoodApp(modifier = Modifier.fillMaxSize())
+                    MeFoodApp()
                 }
             }
         }
@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MeFoodApp(modifier: Modifier = Modifier) {
+fun MeFoodApp() {
     Scaffold (
         topBar = { TopAppBar() },
         modifier = Modifier.fillMaxSize()
@@ -56,7 +56,7 @@ private fun TopAppBar() {
         title = {
             Text(
                 text = stringResource(R.string.app_name),
-                style = MaterialTheme.typography.titleLarge
+                style = MaterialTheme.typography.headlineLarge
             )
         }
     )
@@ -66,8 +66,6 @@ private fun TopAppBar() {
 @Composable
 fun PreviewMeFoodApp() {
     AppTheme {
-        MeFoodApp(
-            modifier = Modifier.fillMaxSize()
-        )
+        MeFoodApp()
     }
 }
