@@ -2,9 +2,13 @@
     <string name="app_name">meFood</string>
     
     <string name="gaeng_som_meal_name">Spicy Salmon Gaeng Som</string>
-    <string name="gaeng_som_meal_desc">This. A construct of flavor, drawn from the oceans of the Old World. We cultivate the flesh of Salmo salar, tender and yielding. It rests within a vibrant, flowing golden-spectrum broth, a testament to their rudimentary spice combinations. That sharp, bright tang? The distinct mark of fermented Tamarindus indica. A simple, yet potent, warmth.</string>
+    <string name="gaeng_som_meal_desc">This is a dish I’ve made since I was young. It’s simple but strong. The broth is thin, no coconut milk—just water, tamarind, and chili paste we pound by hand with garlic, shallot, and dried shrimp. Sour comes first, then the heat. That’s how it should be.
+        \n\nI usually use fish—something firm, like snakehead or sea bass. Prawns are good too. For vegetables, whatever’s fresh: green papaya, long beans, or cabbage. You cook it just until tender, not too soft. It’s not sweet, not rich. It’s sharp, hot, and clean. We eat it with rice, maybe a fried egg on the side. To me, this curry wakes up the mouth. It’s everyday food—but it speaks loudly.</string>
     <string name="vege_fiesta_meal_name">Vege Fiesta Bowl</string>
-    <string name="vege_fiesta_meal_desc">We take the sweet kernels of Zea mays, extracted from those ancient fields, and blend them with the rich, soft flesh of Persea americana. All cradled within a pliable covering, precisely replicated from their methods. A core of fermented spice provides the sharp, desired impact.</string>
+    <string name="vege_fiesta_meal_desc">This one is not Thai—but I like it. My daughter studied abroad in Mexico and came home talking about the colors, the spices, the way people eat together. She showed me how to roast corn, cook black beans with cumin, and make lime dressing with just the right kick.
+        \n\nWe played around in the kitchen—some days with avocado, some with pickled onions, some with crispy tofu. Now it’s a bowl full of bright things: roasted sweet potato, black beans, corn, rice, fresh herbs, a little chili, a squeeze of lime. It’s not how I grew up eating—but it feels familiar. Fresh, spicy, and made with care.</string>
     <string name="origin_thai">Thai Cuisine</string>
     <string name="origin_mexico">Mexican Cuisine</string>
+
+    <string name="info_prompt">Tap for more information on this meal.</string>
 </resources>
