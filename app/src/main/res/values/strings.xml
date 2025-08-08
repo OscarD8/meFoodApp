@@ -10,5 +10,9 @@
     <string name="origin_thai">Thai Cuisine</string>
     <string name="origin_mexico">Mexican Cuisine</string>
 
+    <string name="start_order_button_text">Order</string>
+
+    <string name="starter_header">Starter</string>
+
     <string name="info_prompt">Tap for more information on this meal.</string>
 </resources>

@@ -15,4 +15,6 @@
 
 
     <dimen name="shadow_small">2.dp</dimen>
+
+    <dimen name="home_logo_width">300.dp</dimen>
 </resources>

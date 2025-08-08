@@ -1,10 +1,11 @@
-package com.example.mefood.model
+package com.example.mefood.data
 
-import androidx.compose.ui.res.stringResource
 import com.example.mefood.R
+import com.example.mefood.model.Food
+import com.example.mefood.model.MealType
 
-object FoodRepository {
-    val foods = listOf<Food>(
+object Datasource {
+    val foods = listOf(
         Food(
             name = R.string.gaeng_som_meal_name,
             image = R.drawable.salmon_curry,
