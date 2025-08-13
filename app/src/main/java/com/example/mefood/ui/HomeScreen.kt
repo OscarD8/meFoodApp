@@ -1,6 +1,7 @@
 package com.example.mefood.ui
 
 import FullCircleShape
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -20,8 +21,11 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -30,6 +34,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.mefood.R
@@ -54,15 +60,16 @@ fun HomeScreen(
                 .size(dimensionResource(R.dimen.home_logo_width))
                 .aspectRatio(1f)
         )
-        Button(
+        FilledTonalButton(
             onClick = onClick,
             shape = RoundedCornerShape(12.dp),
             modifier = Modifier
-                .width(135.dp),
+                .fillMaxWidth(0.5f),
             ) {
             Text(
                 text = stringResource(R.string.start_order_button_text),
-                style = MaterialTheme.typography.displaySmall
+                style = MaterialTheme.typography.displaySmall,
+                fontWeight = FontWeight.Bold
             )
         }
     }

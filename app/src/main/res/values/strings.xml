@@ -7,16 +7,28 @@
     <string name="vege_fiesta_meal_name">Vege Fiesta Bowl</string>
     <string name="vege_fiesta_meal_desc">This one is not Thai—but I like it. My daughter studied abroad in Mexico and came home talking about the colors, the spices, the way people eat together. She showed me how to roast corn, cook black beans with cumin, and make lime dressing with just the right kick.
         \n\nWe played around in the kitchen—some days with avocado, some with pickled onions, some with crispy tofu. Now it’s a bowl full of bright things: roasted sweet potato, black beans, corn, rice, fresh herbs, a little chili, a squeeze of lime. It’s not how I grew up eating—but it feels familiar. Fresh, spicy, and made with care.</string>
+
+    <string name="tod_mun_plaa_name">Tod Mun Plaa (Fish Cakes)</string>
+    <string name="tod_mun_plaa_desc">When I was little, we’d buy tod mun plaa from a market stall run by a lady with a voice louder than the traffic. She’d fry them right there, the oil popping, the smell of kaffir lime leaf drifting through the air.\n\nMine are a little gentler—minced fish mixed with red curry paste, finely chopped beans, and herbs—then fried until golden. I serve them with a sweet and sour cucumber relish, just the way I remember.</string>
+    <string name="som_tum_name">Som Tum (Green Papaya Salad)</string>
+    <string name="som_tum_desc">Som tum is what we ate on hot afternoons when cooking over the stove felt like too much. The sound of the pestle hitting the mortar is a kind of music in Thai kitchens—papaya shreds, garlic, chili, lime, and palm sugar pounded together until the flavors are alive.\n\nHere, I keep it just as fresh and sharp, adding cherry tomatoes and roasted peanuts. It’s crunchy, spicy, and a little sweet—bright enough to chase away the rain.</string>
+
+    <string name="mango_sticky_rice_name">Khao Niew Mamuang (Mango Sticky Rice)</string>
+    <string name="mango_sticky_rice_desc">Every April in Thailand, when the mango trees are heavy with fruit, my aunt would bring baskets to our house. We’d steam glutinous rice until it was soft and fragrant, then pour over warm coconut cream until it soaked through.\n\nHere, I use ripe, golden mangoes and just a touch of toasted sesame for a little crunch. Sweet, creamy, and bright—it’s the taste of summer back home, even when the streets outside are wet and grey.</string>
+    <string name="coconut_panna_cotta_name">Coconut Panna Cotta with Passionfruit</string>
+    <string name="coconut_panna_cotta_desc">This one comes from a trip my daughter and I took to Italy. We had panna cotta in a tiny seaside café—soft as a cloud, with the sound of waves in the background. When I came home, I couldn’t stop thinking about it.\n\nI make mine with coconut milk instead of cream, so it carries a little Thai soul, then top it with tart passion fruit for a tropical edge. It’s delicate and light.</string>
+
     <string name="origin_thai">Thai Cuisine</string>
     <string name="origin_mexico">Mexican Cuisine</string>
+    <string name="origin_italy">Italian Cuisine</string>
 
     <string name="start_order_button_text">Order</string>
 
-    <string name="starter_header">Starter</string>
 
     <string name="info_prompt">Tap for more information on this meal.</string>
 
-
-    <string name="home_route_name">home</string>
-    <string name="starter_route_name">starter</string>
+    <string name="starter_header">Starter</string>
+    <string name="home_header">Order</string>
+    <string name="main_header">Mains</string>
+    <string name="dessert_header">Desserts</string>
 </resources>

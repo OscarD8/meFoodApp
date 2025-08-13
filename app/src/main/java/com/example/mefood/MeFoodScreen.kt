@@ -2,11 +2,19 @@ package com.example.mefood
 
 import android.content.Context
 import androidx.annotation.StringRes
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Bento
+import androidx.compose.material.icons.filled.Dining
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Icecream
+import androidx.compose.material.icons.filled.RamenDining
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -19,14 +27,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
-import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -38,55 +44,45 @@ import com.example.mefood.ui.MenuScreen
 
 enum class MeFoodScreen(
     @StringRes val title: Int,
-    @StringRes val route: Int,
     val icon: ImageVector
 ) {
-    Home(R.string.app_name, R.string.home_route_name, Icons.Default.Home),
-    Starter(R.string.starter_header, R.string.starter_route_name, Icons.Default.Bento)
-}
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-private fun TopAppBar(
-    meFoodScreen: MeFoodScreen,
-    modifier: Modifier = Modifier
-) {
-    CenterAlignedTopAppBar(
-        title = {
-            Text(
-                text = stringResource(meFoodScreen.title),
-                style = MaterialTheme.typography.headlineLarge
-            )
-        },
-        modifier = modifier
-    )
+    Home(R.string.home_header, Icons.Default.Home),
+    Starter(R.string.starter_header, Icons.Default.Bento),
+    Main(R.string.main_header, Icons.Default.RamenDining),
+    Dessert(R.string.dessert_header, Icons.Default.Icecream)
 }
 
-//@Composable
-//private fun BottomNavBar(
-//    navController: NavHostController,
-//    context: Context
-//) {
-//    val startDestination = MeFoodScreen.Home
-//    var selectedDestination by rememberSaveable { mutableIntStateOf(startDestination.ordinal) }
-//
-//
-//    NavigationBar(windowInsets = NavigationBarDefaults.windowInsets) {
-//        MeFoodScreen.entries.forEachIndexed { index, destination ->
-//            NavigationBarItem(
-//                selected = selectedDestination == index,
-//                onClick = {
-//                    navController.navigate(route = context.getString(destination.route))
-//                },
-//                icon = {
-//                    Icon(
-//                        destination.icon,
-//                        contentDescription = null // TODO
-//                    )
-//                }
-//            )
-//        }
-//    }
-//}
+
+@Composable
+private fun TopAppBar(
+    selectedDestination: Int,
+    onNavigationChange: (Int, MeFoodScreen) -> Unit,
+) {
+
+    NavigationBar(
+        windowInsets = NavigationBarDefaults.windowInsets,
+        modifier = Modifier.padding(bottom = dimensionResource(R.dimen.padding_medium))
+        ) {
+        MeFoodScreen.entries.forEachIndexed { index, destination ->
+            NavigationBarItem(
+                selected = selectedDestination == index,
+                onClick = {
+                    onNavigationChange(destination.ordinal, destination)
+                },
+                icon = {
+                    Icon(
+                        destination.icon,
+                        contentDescription = null // TODO
+                    ) },
+                label = {
+                    Text(
+                        text = stringResource(destination.title)
+                    )
+                }
+            )
+        }
+    }
+}
 
 @Composable
 fun MeFoodApp() {
@@ -95,12 +91,23 @@ fun MeFoodApp() {
     val currentScreen = MeFoodScreen.valueOf(
         backStackEntry?.destination?.route ?: MeFoodScreen.Home.name
     )
+    var selectedDestination by rememberSaveable { mutableIntStateOf(currentScreen.ordinal) }
+
 
     Scaffold (
-        topBar = { TopAppBar(meFoodScreen = currentScreen) },
-        modifier = Modifier.fillMaxSize()
+        topBar = {
+            TopAppBar(
+                selectedDestination = selectedDestination,
+                onNavigationChange = { newIndex, newScreen ->
+                    selectedDestination = newIndex
+                    navController.navigate(newScreen.name)
+                }
+            )
+        },
+        modifier = Modifier
+            .fillMaxSize()
+            .safeDrawingPadding()
     ) { innerPadding ->
-        val context = LocalContext.current
 
         NavHost(
             navController = navController,
@@ -108,15 +115,23 @@ fun MeFoodApp() {
             modifier = Modifier.padding(innerPadding)
         ) {
             MeFoodScreen.entries.forEach { destination ->
-                composable(context.resources.getString(destination.route)) {
+                composable(route = destination.name) {
                     when (destination) {
                         MeFoodScreen.Home -> HomeScreen(
-                            onClick = { navController.navigate(MeFoodScreen.Starter) },
+                            onClick = {
+                                navController.navigate(MeFoodScreen.Starter.name)
+                                selectedDestination = MeFoodScreen.Starter.ordinal
+                            },
                             modifier = Modifier.fillMaxSize()
                         )
                         MeFoodScreen.Starter -> MenuScreen(
-                            foods = Datasource.foods,
-                            modifier = Modifier.fillMaxSize()
+                            menuItems = Datasource.starterMenuItems,
+                        )
+                        MeFoodScreen.Main -> MenuScreen(
+                            menuItems = Datasource.mainMenuItems
+                        )
+                        MeFoodScreen.Dessert -> MenuScreen(
+                            menuItems = Datasource.dessertMenuItems
                         )
                     }
                 }
