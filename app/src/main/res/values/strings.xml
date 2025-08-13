@@ -15,4 +15,8 @@
     <string name="starter_header">Starter</string>
 
     <string name="info_prompt">Tap for more information on this meal.</string>
+
+
+    <string name="home_route_name">home</string>
+    <string name="starter_route_name">starter</string>
 </resources>

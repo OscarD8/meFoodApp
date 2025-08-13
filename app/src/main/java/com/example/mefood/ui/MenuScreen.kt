@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -51,6 +52,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.mefood.R
+import com.example.mefood.data.Datasource
 import com.example.mefood.model.Food
 import com.example.mefood.model.MealType
 import com.example.mefood.ui.theme.AppTheme
@@ -120,7 +122,6 @@ private fun FoodListItem(
         Column (
             modifier = Modifier
                 .padding(dimensionResource(R.dimen.padding_large))
-                .verticalScroll(rememberScrollState())
                 .animateContentSize(
                 animationSpec = spring(
                     dampingRatio = Spring.DampingRatioNoBouncy,
@@ -210,6 +211,17 @@ fun PreviewCard() {
                 mealType = MealType.MAIN,
                 isVegetarian = false
             )
+        )
+    }
+}
+
+@Composable
+@Preview
+fun PreviewMenu() {
+    AppTheme {
+        MenuScreen(
+            foods = Datasource.foods,
+            modifier = Modifier.fillMaxSize()
         )
     }
 }
