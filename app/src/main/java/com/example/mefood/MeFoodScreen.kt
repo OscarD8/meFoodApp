@@ -54,7 +54,7 @@ enum class MeFoodScreen(
 
 
 @Composable
-private fun TopAppBar(
+private fun MeFoodNavBar(
     selectedDestination: Int,
     onNavigationChange: (Int, MeFoodScreen) -> Unit,
 ) {
@@ -72,7 +72,7 @@ private fun TopAppBar(
                 icon = {
                     Icon(
                         destination.icon,
-                        contentDescription = null // TODO
+                        contentDescription = destination.name
                     ) },
                 label = {
                     Text(
@@ -95,8 +95,8 @@ fun MeFoodApp() {
 
 
     Scaffold (
-        topBar = {
-            TopAppBar(
+        bottomBar = {
+            MeFoodNavBar(
                 selectedDestination = selectedDestination,
                 onNavigationChange = { newIndex, newScreen ->
                     selectedDestination = newIndex
@@ -108,7 +108,6 @@ fun MeFoodApp() {
             .fillMaxSize()
             .safeDrawingPadding()
     ) { innerPadding ->
-
         NavHost(
             navController = navController,
             startDestination = MeFoodScreen.Home.name,

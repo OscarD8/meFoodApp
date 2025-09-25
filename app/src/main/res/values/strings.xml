@@ -28,7 +28,7 @@
     <string name="info_prompt">Tap for more information on this meal.</string>
 
     <string name="starter_header">Starter</string>
-    <string name="home_header">Order</string>
+    <string name="home_header">Home</string>
     <string name="main_header">Mains</string>
     <string name="dessert_header">Desserts</string>
 </resources>
